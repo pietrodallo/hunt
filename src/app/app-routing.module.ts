@@ -8,9 +8,13 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'getting-started',
     pathMatch: 'full'
   },
+  {
+    path: 'getting-started',
+    loadChildren: () => import('./getting-started/getting-started.module').then( m => m.GettingStartedPageModule)
+  }
 ];
 
 @NgModule({
